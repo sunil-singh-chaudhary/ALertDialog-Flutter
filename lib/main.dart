@@ -35,12 +35,23 @@ class _MyWidgetState extends State<NewHome> {
         color: Colors.amber,
         child: Center(
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              ShowAlertDialog(context);
+            },
             child: Text("AlertDialog"),
             style: TextButton.styleFrom(primary: Colors.red),
           ),
         ),
       ),
     );
+  }
+
+  void ShowAlertDialog(BuildContext context) {
+    var alertdialog = const AlertDialog(
+      title: Text("alert dialog "),
+      content: Text('ow you trip'),
+    );
+    showDialog(
+        context: context, builder: (BuildContext context) => alertdialog);
   }
 }
